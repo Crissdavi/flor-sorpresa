@@ -1,0 +1,45 @@
+html,body{
+  margin:0;
+  padding:0;
+  width:100%;
+  min-height:100%;
+  background:#000;
+  overflow-x:hidden;
+  overflow-y:auto;
+  font-family:Arial,sans-serif;
+}
+
+body{
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+}
+
+#canvas{
+  width:min(100vw,800px);
+  height:auto;
+  display:none;
+}
+
+#inicio{
+  color:#7be0a8;
+  text-align:center;
+}
+
+#comenzar{
+  border:1px solid #4acb83;
+  background:#07150e;
+  color:#8cf0b5;
+  padding:16px 28px;
+  border-radius:12px;
+  font-size:20px;
+  cursor:pointer;
+}
+
+#comenzar:hover{
+  background:#0c2418;
+}
+
+#inicio p{
+  opacity:.8;
+}
