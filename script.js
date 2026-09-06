@@ -14,8 +14,8 @@ const W = 15 * K;
 const R = 14;
 
 /* Más grande que la versión anterior */
-const TAMANO_LETRA = 21;
-const ALTO_LINEA = 27;
+const TAMANO_LETRA = 18;
+const ALTO_LINEA = 22;
 const TIEMPO_LETRA = 50; // ms por carácter
 
 const mensajeCompleto = `Hay personas que llegan a nuestra vida
@@ -61,7 +61,7 @@ let florTerminada = false;
 /* 0.4 ms del Python no puede reproducirse literalmente con
    requestAnimationFrame, así que dibujamos varios puntos por frame
    para mantener una creación progresiva y fluida. */
-const PUNTOS_POR_FRAME = 12;
+const PUNTOS_POR_FRAME = 5;
 
 function bez(p0, p1, p2, n = 15) {
   const puntos = [];
@@ -184,6 +184,10 @@ function actualizarTexto(ahora) {
 }
 
 function dibujarTexto() {
+  // Limpia únicamente la zona del poema para que las letras
+  // no queden una encima de otra.
+  ctx.clearRect(100, 455, 600, 345);
+
   if (!textoActual) return;
 
   ctx.save();
@@ -195,12 +199,10 @@ function dibujarTexto() {
 
   const lineas = textoActual.split("\n");
 
-  /*
-    El texto queda en la zona inferior, como en la versión Python,
-    pero con letras bastante más grandes para que se lean bien.
-  */
+  // El poema aparece debajo de la flor y se vuelve a dibujar
+  // limpio en cada actualización.
   const alturaTexto = lineas.length * ALTO_LINEA;
-  const yInicial = 800 - 330 - alturaTexto / 2;
+  const yInicial = 470;
 
   lineas.forEach((linea, i) => {
     ctx.fillText(linea, 400, yInicial + i * ALTO_LINEA);

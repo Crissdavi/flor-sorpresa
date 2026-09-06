@@ -1,16 +1,10 @@
-# Flor 🌸
+# Flor 🌸 — versión 3
 
-Esta versión mantiene la forma de la flor original de Python y ahora:
-
+Cambios:
 - La flor se construye progresivamente, pétalo por pétalo y punto por punto.
-- El poema usa letras más grandes (21 px).
-- La música se reproduce al pulsar el botón.
+- La velocidad de construcción de la flor se redujo para que se vea mejor.
+- El poema ya no se superpone consigo mismo.
+- El texto se limpia y redibuja correctamente en cada actualización.
+- El poema queda debajo de la flor y sigue siendo legible.
 
-Para GitHub Pages, coloca `musica.mp3` en esta misma carpeta:
-
-flor_github_pages/
-├── index.html
-├── style.css
-├── script.js
-├── README.md
-└── musica.mp3
+Coloca `musica.mp3` en esta misma carpeta antes de subirla a GitHub Pages.
