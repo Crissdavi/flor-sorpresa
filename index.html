@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Keylogger Simple</title>
+</head>
+<body>
+    <h1>Presiona teclas para loguear</h1>
+    <div id="keylog"></div>  <!-- Este div mostrará las teclas en tiempo real -->
+    <script>
+// Crea un array para almacenar las teclas presionadas
+let loggedKeys = [];
+
+// Agrega un event listener para el evento 'keydown' en el documento
+document.addEventListener('keydown', function(event) {
+    // Obtiene la tecla presionada
+    const key = event.key;
+    
+    // Almacena la tecla en el array
+    loggedKeys.push(key);
+    
+    // Muestra la tecla en la consola para depuración
+    console.log('Tecla presionada: ' + key);
+    
+    // Opcional: Muestra las teclas logueadas en un elemento HTML (por ejemplo, un div)
+    const logElement = document.getElementById('keylog');
+    if (logElement) {
+        logElement.innerHTML += key + ' ';  // Agrega la tecla al elemento HTML
+    }
+});
+
+// Función para recuperar y mostrar los logs (por ejemplo, al hacer clic en un botón)
+function displayLogs() {
+    console.log('Teclas logueadas: ' + loggedKeys.join(''));
+    alert('Teclas logueadas: ' + loggedKeys.join(''));  // Muestra en un alert para simplicidad
+}
+
+// Ejemplo: Llama a displayLogs() cuando quieras ver los logs, e.g., al cargar la página
+window.onload = function() {
+    displayLogs();  // Esto se ejecuta una vez al cargar la página
+};
+
+    </script>
+</body>
+</html>
